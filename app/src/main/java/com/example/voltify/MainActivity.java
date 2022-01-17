@@ -9,31 +9,31 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText title, artist, genre, duration;
-    Button insert, show;
-    SongManager songManager = new SongManager();
+    EditText titolo, autore, genere, durata;
+    Button inserisci, mostra;
+    GestioneBrani songManager = new GestioneBrani();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        title = findViewById(R.id.title);
-        artist = findViewById(R.id.artist);
-        genre = findViewById(R.id.genre);
-        duration = findViewById(R.id.duration);
-        insert = findViewById(R.id.insert);
-        show = findViewById(R.id.show);
-        SongManager songManager = new SongManager();
+        titolo = findViewById(R.id.titoloCanzone);
+        autore = findViewById(R.id.autoreCanzone);
+        genere = findViewById(R.id.genereCanzone);
+        durata = findViewById(R.id.durataCanzone);
+        inserisci = findViewById(R.id.inserisci);
+        mostra = findViewById(R.id.mostra);
+        GestioneBrani gb = new GestioneBrani();
 
-        insert.setOnClickListener(new View.OnClickListener() {
+        inserisci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                songManager.addSong(title.getText().toString(), artist.getText().toString(), genre.getText().toString(), Integer.getInteger(duration.getText().toString()));
+                gb.addBrano(titolo.getText().toString(), autore.getText().toString(), genere.getText().toString(), Integer.getInteger(durata.getText().toString()));
             }
         });
 
-        show.setOnClickListener(new View.OnClickListener() {
+        mostra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

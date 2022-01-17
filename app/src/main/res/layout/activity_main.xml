@@ -14,14 +14,14 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="175dp"
         android:layout_marginBottom="680dp"
-        android:text="TextView"
+        android:text="Voltify"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/title"
+        android:id="@+id/titoloCanzone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/artist"
+        android:id="@+id/autoreCanzone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -50,10 +50,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/titoloCanzone" />
 
     <EditText
-        android:id="@+id/genre"
+        android:id="@+id/genereCanzone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -66,10 +66,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/artist" />
+        app:layout_constraintTop_toBottomOf="@+id/autoreCanzone" />
 
     <EditText
-        android:id="@+id/duration"
+        android:id="@+id/durataCanzone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -81,34 +81,100 @@
         android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/genre" />
+        app:layout_constraintTop_toBottomOf="@+id/genereCanzone"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/insert"
+        android:id="@+id/inserisci"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="74dp"
         android:layout_marginTop="530dp"
         android:layout_marginEnd="243dp"
         android:layout_marginBottom="153dp"
-        android:text="Insert"
+        android:text="inserisci"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/show"
+        android:id="@+id/mostra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="250dp"
         android:layout_marginTop="530dp"
         android:layout_marginEnd="74dp"
         android:layout_marginBottom="153dp"
-        android:text="Show"
+        android:text="mostra"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="252dp"
+        android:layout_marginBottom="9dp"
+        android:text="Titolo"
+        app:layout_constraintBottom_toTopOf="@+id/titoloCanzone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="253dp"
+        android:layout_marginBottom="2dp"
+        android:text="Autore"
+        app:layout_constraintBottom_toTopOf="@+id/autoreCanzone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titoloCanzone"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="253dp"
+        android:layout_marginBottom="4dp"
+        android:text="Genere"
+        app:layout_constraintBottom_toTopOf="@+id/genereCanzone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autoreCanzone"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="252dp"
+        android:layout_marginBottom="3dp"
+        android:text="Durata"
+        app:layout_constraintBottom_toTopOf="@+id/durataCanzone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genereCanzone"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
