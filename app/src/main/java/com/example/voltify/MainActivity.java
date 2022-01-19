@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i= new Intent(getApplicationContext(),SecondaActivity.class);
                 gb.mostraBrani();
-                i.putExtra("listaBrani",);
             }
         });
 
