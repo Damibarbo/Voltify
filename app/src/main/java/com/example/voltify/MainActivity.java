@@ -2,6 +2,7 @@ package com.example.voltify;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
         mostra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i= new Intent(getApplicationContext(),SecondaActivity.class);
+                gb.mostraBrani();
+                i.putExtra("listaBrani",);
             }
         });
 

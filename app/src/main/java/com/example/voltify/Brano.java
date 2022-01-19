@@ -6,6 +6,13 @@ public class Brano {
     private String genere;
     private Integer durata;
 
+    public Brano(String titolo, String autore, String genere, Integer durata) {
+        this.titolo = titolo;
+        this.autore = autore;
+        this.genere = genere;
+        this.durata = durata;
+    }
+
     public String getTitle() {
         return titolo;
     }
