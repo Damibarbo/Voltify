@@ -18,8 +18,8 @@ public class SecondaActivity extends AppCompatActivity {
 
         i=getIntent();
         brani=(TextView) findViewById(R.id.listaBrani);
-        String braniRicevuti=i.getStringExtra("brani");
-        Toast.makeText(getApplicationContext(),braniRicevuti,Toast.LENGTH_LONG).show();
+        String braniRicevuti=i.getStringExtra("brani");  //ricevo la lista dei brani passata con putExtra contraddistinta dall'etichetta brani
+        Toast.makeText(getApplicationContext(),braniRicevuti,Toast.LENGTH_LONG).show();    //creo toast che visualizza a schermo la lista dei brani ricevuta di durata long
     }
 }
 

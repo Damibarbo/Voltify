@@ -6,13 +6,15 @@ public class Brano {
     private String genere;
     private Integer durata;
 
-    public Brano(String titolo, String autore, String genere, Integer durata) {
+    public Brano(String titolo, String autore, String genere, Integer durata) {  //coatruttore classe Brano
         this.titolo = titolo;
         this.autore = autore;
         this.genere = genere;
         this.durata = durata;
     }
 
+
+    //metodi getter e setter per ogmi attributo della classe brano
     public String getTitolo() {
         return titolo;
     }
