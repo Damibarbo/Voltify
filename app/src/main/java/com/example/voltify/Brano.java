@@ -13,26 +13,35 @@ public class Brano {
         this.durata = durata;
     }
 
-    public String getTitle() {
+    public String getTitolo() {
         return titolo;
     }
-    public void setTitle(String title) {
+
+    public void setTitolo(String titolo) {
         this.titolo = titolo;
     }
-    public String getArtist() {
+
+    public String getAutore() {
         return autore;
     }
-    public void setArtist(String artist) {
+
+    public void setAutore(String autore) {
         this.autore = autore;
     }
-    public String getGenre() {
+
+    public String getGenere() {
         return genere;
     }
-    public void setGenre(String genre) {
+
+    public void setGenere(String genere) {
         this.genere = genere;
     }
-    public Integer getDuration() { return durata; }
-    public void setDuration(Integer duration) {
+
+    public Integer getDurata() {
+        return durata;
+    }
+
+    public void setDurata(Integer durata) {
         this.durata = durata;
     }
 }

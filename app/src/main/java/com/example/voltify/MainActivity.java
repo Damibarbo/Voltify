@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText titolo, autore, genere, durata;
+    EditText titolo, autore, durata;
     Button inserisci, mostra;
+    Spinner genere;
     GestioneBrani songManager = new GestioneBrani();
 
     @Override
@@ -30,15 +32,16 @@ public class MainActivity extends AppCompatActivity {
         inserisci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gb.addBrano(titolo.getText().toString(), autore.getText().toString(), genere.getText().toString(), Integer.getInteger(durata.getText().toString()));
+                gb.addBrano(titolo.getText().toString(), autore.getText().toString(), genere.getSelectedItem().toString(), Integer.getInteger(durata.getText().toString()));
             }
         });
 
         mostra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),SecondaActivity.class);
-                gb.mostraBrani();
+                Intent i = new Intent(MainActivity.this, SecondaActivity.class);
+                i.putExtra("brani", gb.mostraBrani());
+                startActivity(i);
             }
         });
 

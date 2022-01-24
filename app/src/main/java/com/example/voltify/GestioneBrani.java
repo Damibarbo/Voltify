@@ -18,12 +18,15 @@ public class GestioneBrani {
             brani.add(br);
     }
 
-    public void mostraBrani() {
+    public String mostraBrani() {
         StringBuilder sb = new StringBuilder();
         for (Brano s : brani)
         {
-            sb.append(s);
+            sb.append(s.getTitolo().toString());
+            sb.append(s.getAutore().toString());
+            sb.append(s.getGenere().toString());
             sb.append("\t");
         }
+        return sb.toString();
     }
 }
