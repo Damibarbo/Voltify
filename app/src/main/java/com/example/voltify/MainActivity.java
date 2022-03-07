@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -27,12 +28,17 @@ public class MainActivity extends AppCompatActivity {
         durata = findViewById(R.id.durataCanzone); //assegno alla variabile durata la view che ha come id "durataCanzone"
         inserisci = findViewById(R.id.inserisci);  //assegno alla variabile inserisci la view che ha come id "inserisci"
         mostra = findViewById(R.id.mostra);        //assegno alla variabile mostra la view che ha come id "mostra"
+        genere =(Spinner) findViewById(R.id.genereCanzone);
+        ArrayAdapter<String> adapter= new ArrayAdapter<String>
+                (this,  android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.generi));
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        genere.setAdapter(adapter);
         GestioneBrani gb = new GestioneBrani();   // istanzio un oggetto della classe GestioneBrani
 
         inserisci.setOnClickListener(new View.OnClickListener() {  //imposto un ascoltatore evento onClick sul bottone inserisci
             @Override
             public void onClick(View v) {   //questa è la funzione che verrà richiamata quando l'ascoltatoremrileverà un click del bottone mostra
-                gb.addBrano(titolo.getText().toString(), autore.getText().toString(), genere.getSelectedItem().toString(), Integer.getInteger(durata.getText().toString()));  //richiama la funzione addBrano dalla classe GestioneBrani passando come parametri i valori inseriti dall'utente nelle editText e o Spinner
+                gb.addBrano(titolo.getText().toString(), autore.getText().toString(), genere.getSelectedItem().toString(), Integer.parseInt(durata.getText().toString()));  //richiama la funzione addBrano dalla classe GestioneBrani passando come parametri i valori inseriti dall'utente nelle editText e o Spinner
             }
         });
 

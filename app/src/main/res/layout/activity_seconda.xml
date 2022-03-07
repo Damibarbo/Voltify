@@ -6,17 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".SecondaActivity">
 
-    <TextView
+    <ListView
         android:id="@+id/listaBrani"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="174dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="179dp"
-        android:layout_marginBottom="562dp"
-        android:text="TextView"
+        android:layout_width="415dp"
+        android:layout_height="571dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="87dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="131dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="687dp"
+        android:text="LISTA CANZONI"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/esporta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="270dp"
+        android:layout_marginBottom="19dp"
+        android:text="Esporta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listaBrani" />
+
+    <Button
+        android:id="@+id/importa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="19dp"
+        android:text="importa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/esporta"
+        app:layout_constraintTop_toBottomOf="@+id/listaBrani" />
 </androidx.constraintlayout.widget.ConstraintLayout>
