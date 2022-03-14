@@ -1,5 +1,6 @@
 package com.example.voltify;
 
+import android.content.Context;
 import android.content.Intent;
 
 import androidx.viewpager.widget.PagerTabStrip;
@@ -32,6 +33,10 @@ public class GestioneBrani {
             sb.append("\n");   //attacca ad sb i caratteri "/n" per andare a capo ogni volta che un brano dell'array list è stato aggiunto
         }
         return sb.toString();  //restituisco il contenuto dell'oggetto sb
+    }
+
+    public void addBranoJson(Brano b) {
+        brani.add(b);
     }
 }
 

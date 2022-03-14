@@ -2,7 +2,11 @@ package com.example.voltify;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.util.Log;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -52,5 +56,36 @@ public class GestoreFile {
             e.printStackTrace();
         }
         return sb.toString();
+    }
+
+    public Brano leggiJson(Context c) throws JSONException {
+        Resources res;
+        StringBuilder sb = new StringBuilder();
+        res=c.getResources();
+        InputStream fdl;
+        fdl= res.openRawResource(R.raw.canzoni);
+        String contenutoFile;
+        try {
+            BufferedReader fileIn = new BufferedReader(new InputStreamReader(fdl));
+            String riga;
+            while ((riga = fileIn.readLine()) != null) {  //ciclo while che scorre il file riga per riga ed assegma il valore della riga a fileOut, il ciclo continua fino a che non si arriva alla fine del file quando fileOut sarà null
+                sb.append(riga + "\n");  //Ogni riga letta dal file viene "appesa" assieme al carattere /n che permette di andare a capo nell'oggetto sb così, in questo modo sb avrà lo stesso contemuto del file
+            }
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        contenutoFile=sb.toString();
+        JSONObject jsonRoot = new JSONObject(contenutoFile);
+        String nome=jsonRoot.getString("Nome");
+        String autore=jsonRoot.getString("Autore");
+        String genere=jsonRoot.getString("Genere");
+        int durata=jsonRoot.getInt("Durata");
+
+        Brano br=new Brano(nome,autore,genere,durata);
+
+        return br;
     }
 }
