@@ -5,6 +5,7 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -58,7 +59,7 @@ public class GestoreFile {
         return sb.toString();
     }
 
-    public Brano leggiJson(Context c) throws JSONException {
+    public Brano[] leggiJson(Context c) throws JSONException {
         Resources res;
         StringBuilder sb = new StringBuilder();
         res=c.getResources();
@@ -79,13 +80,18 @@ public class GestoreFile {
 
         contenutoFile=sb.toString();
         JSONObject jsonRoot = new JSONObject(contenutoFile);
-        String nome=jsonRoot.getString("Nome");
-        String autore=jsonRoot.getString("Autore");
-        String genere=jsonRoot.getString("Genere");
-        int durata=jsonRoot.getInt("Durata");
+        JSONArray jsonArray = jsonRoot.getJSONArray("Brani");
+        Brano[] arrayBrani = new Brano[jsonArray.length()];
+        for(int i=0;i<jsonArray.length();i++) {
+            JSONObject mObject2 = jsonArray.getJSONObject(i);
+            String nome=mObject2.getString("Nome");
+            String autore=mObject2.getString("Autore");
+            String genere=mObject2.getString("Genere");
+            int durata=mObject2.getInt("Durata");
 
-        Brano br=new Brano(nome,autore,genere,durata);
+            arrayBrani[i]=new Brano(nome,autore,genere,durata);
+        }
 
-        return br;
+        return arrayBrani;
     }
 }

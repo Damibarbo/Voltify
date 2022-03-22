@@ -1,6 +1,22 @@
 {
-  "Nome": "La follia rende folli",
-  "Autore": "John Lennon",
-  "Genere": "metal",
-  "Durata": 195
+  "Brani": [
+    {
+      "Nome": "La follia rende folli",
+      "Autore": "John Lennon",
+      "Genere": "metal",
+      "Durata": 195
+    },
+    {
+      "Nome": "Boh",
+      "Autore": "Ciao",
+      "Genere": "Ajajkaj",
+      "Durata": 230
+    },
+    {
+      "Nome": "paulimoGol",
+      "Autore": "sium",
+      "Genere": "sosos",
+      "Durata": 122
+    }
+  ]
 }

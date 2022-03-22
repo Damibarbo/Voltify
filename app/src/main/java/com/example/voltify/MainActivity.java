@@ -59,7 +59,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {
-                    gb.addBranoJson(gf.leggiJson(getApplicationContext()));
+                    Brano[] resultCanzoni=null;
+                    resultCanzoni=gf.leggiJson(getApplicationContext());
+                    for(int i=0;i<resultCanzoni.length;i++) {
+                        gb.addBranoJson(resultCanzoni[i]);
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
